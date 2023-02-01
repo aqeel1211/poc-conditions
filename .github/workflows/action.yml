@@ -14,7 +14,7 @@ runs:
         ref: main
     - name: test condition
       run: |
-        if [ ${{ inputs.input1 }} ] == ''; then
+        if [ -z ${{ inputs.input1 }} ]; then
           echo "input1 is empty"
         fi
       shell: bash
