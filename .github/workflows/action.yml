@@ -16,7 +16,7 @@ runs:
       id: checksecrets
       shell: bash
       run: |
-        if [ -z ${{ $inputs.input1 }} ]; then
+        if [ -z ${{ inputs.input1 }} ]; then
           echo "secretspresent=NO" >> $GITHUB_OUTPUT
         else
           echo "secretspresent=YES" >> $GITHUB_OUTPUT
