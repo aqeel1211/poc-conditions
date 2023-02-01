@@ -12,9 +12,21 @@ runs:
       with:
         repository: aqeel1211/test-conditions
         ref: main
-    - name: test condition
+    - name: Check secrets presence
+      id: checksecrets
+      shell: bash
       run: |
-        if [ -z ${{ inputs.input1 }} ]; then
-          echo "input1 is empty"
+        if [ -z ${{$inputs.input1}} ]; then
+          echo "secretspresent=NO" >> $GITHUB_OUTPUT
+        else
+          echo "secretspresent=YES" >> $GITHUB_OUTPUT
         fi
+    - name: run step if secret is present
+      if: (steps.checksecrets.outputs.secretspresent == 'YES')
+      run: echo secret is present
+#     - name: test condition
+#       run: |
+#         if [ -z ${{ inputs.input1 }} ]; then
+#           echo "input1 is empty"
+#         fi
       shell: bash
