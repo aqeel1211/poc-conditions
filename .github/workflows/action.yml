@@ -33,5 +33,4 @@ runs:
     - name: Test bat script
       shell: pwsh
       run: |
-        Rem This is for listing down all the files in the directory Program files 
         echo "The program has completed"
