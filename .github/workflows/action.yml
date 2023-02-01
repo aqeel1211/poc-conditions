@@ -35,3 +35,5 @@ runs:
       run: |
         echo "The program has completed"
         ls -la
+        mv README.md Readme.md
+        ls -la
