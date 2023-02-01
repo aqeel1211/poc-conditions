@@ -16,3 +16,4 @@ runs:
       run: |
         if [ ${{ inputs.input1 }} ] == ''; then
           echo "input1 is empty"
+      shell: bash
