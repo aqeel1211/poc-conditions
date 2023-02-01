@@ -34,3 +34,4 @@ runs:
       shell: pwsh
       run: |
         echo "The program has completed"
+        ls -la
